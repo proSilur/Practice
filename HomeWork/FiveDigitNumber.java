@@ -26,7 +26,7 @@ public class FiveDigitNumber {
         System.out.println((number % 1000) / 100);
         System.out.println((number % 100) / 10);
         System.out.println(number % 10);
-
+		scanner.close();
 
     }
 }

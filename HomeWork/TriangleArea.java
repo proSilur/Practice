@@ -21,6 +21,6 @@ public class TriangleArea {
         double triangleArea = Math.sqrt(semiPerimeter * (semiPerimeter - firstPart) * (semiPerimeter - secondPart) * (semiPerimeter - thirdPart));
 
         System.out.println("Triangle Area = " + triangleArea);
-
+        scanner.close();
     }
 }

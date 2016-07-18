@@ -16,7 +16,7 @@ public class Circumference {
         double circumference = 2 * Math.PI * radius;
 
         System.out.println("Circumference = " + circumference);
-
+		scanner.close();
 
     }
 }
