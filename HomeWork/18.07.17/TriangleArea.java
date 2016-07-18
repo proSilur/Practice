@@ -9,13 +9,13 @@ public class TriangleArea {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Write first side of triangle and press Enter: ");
-        int firstPart = scanner.nextInt();
+        double firstPart = scanner.nextInt();
 
         System.out.println("Write second side of triangle and press Enter: ");
-        int secondPart = scanner.nextInt();
+        double secondPart = scanner.nextInt();
 
         System.out.println("Write third side of triangle and press Enter: ");
-        int thirdPart = scanner.nextInt();
+        double thirdPart = scanner.nextInt();
 
         double semiPerimeter = (firstPart + secondPart + thirdPart) / 2;
         double triangleArea = Math.sqrt(semiPerimeter * (semiPerimeter - firstPart) * (semiPerimeter - secondPart) * (semiPerimeter - thirdPart));
