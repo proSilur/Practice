@@ -11,18 +11,19 @@ import java.util.Scanner;
  ***
  **
  *
-
  */
 
 public class Figure {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        StringBuilder builder = new StringBuilder();
         int length = scanner.nextInt();
-        String temp = "";
+
         for (int i = 0; i < length * 2 - 1; i++) {
-            temp += "*";
-            System.out.print(temp + "\n");
+            if (i < length) System.out.print(builder.append("*") + "\n");
+            else System.out.print(builder.deleteCharAt(0) + "\n");
         }
         scanner.close();
     }
 }
+
