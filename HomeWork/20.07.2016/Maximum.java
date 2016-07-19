@@ -22,6 +22,7 @@ public class Maximum {
         else if (b > a && b > c && b > d) System.out.println(b);
         else if (c > a && c > b && c > d) System.out.println(c);
         else if (d > a && d > b && d > c) System.out.println(d);
+        scanner.close();
 
     }
 }

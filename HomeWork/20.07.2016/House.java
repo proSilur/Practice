@@ -29,5 +29,6 @@ public class House {
                 }
             }
         }
+        scanner.close();
     }
 }

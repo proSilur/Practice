@@ -15,5 +15,6 @@ public class Circle {
 
         String output = (distance > 4) ? "OUT OF CIRCLE" : "IN CIRCLE";
         System.out.println(output + ", distance from the center = " + distance);
+        scanner.close();
     }
 }

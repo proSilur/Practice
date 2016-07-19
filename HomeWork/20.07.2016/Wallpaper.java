@@ -28,5 +28,6 @@ public class Wallpaper {
             }
             System.out.println();
         }
+        scanner.close();
     }
 }

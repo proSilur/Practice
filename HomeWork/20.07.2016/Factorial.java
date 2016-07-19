@@ -24,5 +24,6 @@ public class Factorial {
             factorial *= i;
         }
         System.out.println("Factorial of number " + number + " = " + factorial);
+        scanner.close();
     }
 }

@@ -23,6 +23,6 @@ public class Figure {
             temp += "*";
             System.out.print(temp + "\n");
         }
-
+        scanner.close();
     }
 }
