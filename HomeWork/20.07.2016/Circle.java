@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Circle {
     public static void main(String[] args) {
+		
         Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the coordinates of the point (X, ): ");
         double x = scanner.nextDouble();
