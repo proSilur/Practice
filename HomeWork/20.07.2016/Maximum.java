@@ -18,7 +18,7 @@ public class Maximum {
         int d = scanner.nextInt();
 
         //Экономим строки кода xD
-        System.out.println("Maximum value is: " + ((((a > b) ? a : b) > ((c > d) ? c : d)) ? ((a > b) ? a : b) : ((c > d) ? c : d)));
+        System.out.println("Maximum value is: " + ((((a >= b) ? a : b) >= ((c >= d) ? c : d)) ? ((a >= b) ? a : b) : ((c >= d) ? c : d)));
         scanner.close();
     }
 }
