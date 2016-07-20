@@ -21,7 +21,9 @@ public class Wallpaper {
                 temp = "***";
                 System.out.print(temp);
                 j++;
-                if (lineNumber % 2 != 0 && j == lineNumber) break; // Костыль :)
+                if (lineNumber % 2 != 0 && j == lineNumber) {  // Костыль :)
+                    break;
+                }
                 temp = "+++";
                 j++;
                 System.out.print(temp);
