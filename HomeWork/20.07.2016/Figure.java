@@ -19,6 +19,7 @@ public class Figure {
         StringBuilder builder = new StringBuilder();
         int length = scanner.nextInt();
 
+		//Вывод в консоль одним циклом
         for (int i = 0; i < length * 2 - 1; i++) {
             if (i < length) System.out.print(builder.append("*") + "\n");
             else System.out.print(builder.deleteCharAt(0) + "\n");

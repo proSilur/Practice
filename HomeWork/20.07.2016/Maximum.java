@@ -17,12 +17,8 @@ public class Maximum {
         System.out.println("Write fourth number and press Enter: ");
         int d = scanner.nextInt();
 
-        System.out.print("Maximum value is: ");
-        if (a > b && a > c && a > d) System.out.println(a);
-        else if (b > a && b > c && b > d) System.out.println(b);
-        else if (c > a && c > b && c > d) System.out.println(c);
-        else if (d > a && d > b && d > c) System.out.println(d);
+        //Экономим строки кода xD
+        System.out.println("Maximum value is: " + ((((a > b) ? a : b) > ((c > d) ? c : d)) ? ((a > b) ? a : b) : ((c > d) ? c : d)));
         scanner.close();
-
     }
 }

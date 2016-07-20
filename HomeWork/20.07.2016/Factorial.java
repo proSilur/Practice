@@ -11,7 +11,7 @@ public class Factorial {
         System.out.println("Write number n (4<n<16): ");
         int number = scanner.nextInt();
         int factorial = 1;
-        //While the condition is not satisfied
+        //Будет просить n пока не будет введено (4<n<16)
         while (true) {
             if (number > 4 && number < 16) break;
             else {
@@ -20,6 +20,7 @@ public class Factorial {
                 number = scanner.nextInt();
             }
         }
+		//Вычисление факториала
         for (int i = 1; i <= number; i++) {
             factorial *= i;
         }
