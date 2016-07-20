@@ -34,8 +34,12 @@ public class Triangle {
                 || (firstSide <= 0 && secondSide <= 0 && thirdSide <= 0)) {
             if (firstSide == 0 || secondSide == 0 || thirdSide == 0) {
                 System.out.println("Точка лежит на линии треугольника!");
-            } else System.out.println("Точка лежит внутри треугольника!");
-        } else System.out.println("Точка лежит за пределами треугольника!");
+            } else {
+                System.out.println("Точка лежит внутри треугольника!");
+            }
+        } else {
+            System.out.println("Точка лежит за пределами треугольника!");
+        }
         scanner.close();
     }
 }
