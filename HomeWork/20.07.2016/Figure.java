@@ -22,8 +22,11 @@ public class Figure {
 
         //Вывод в консоль одним циклом
         for (int i = 0; i < length * 2 - 1; i++) {
-            if (i < length) System.out.println(builder.append("*"));
-            else System.out.println(builder.deleteCharAt(0));
+            if (i < length) {
+                System.out.println(builder.append("*"));
+            } else {
+                System.out.println(builder.deleteCharAt(0));
+            }
         }
         scanner.close();
     }
