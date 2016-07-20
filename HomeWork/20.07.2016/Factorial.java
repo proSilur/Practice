@@ -13,14 +13,15 @@ public class Factorial {
         int factorial = 1;
         //Будет просить n пока не будет введено (4<n<16)
         while (true) {
-            if (number > 4 && number < 16) break;
-            else {
+            if (number > 4 && number < 16) {
+                break;
+            } else {
                 System.out.println("Wrong Number!");
                 System.out.println("Write number n (4<n<16): ");
                 number = scanner.nextInt();
             }
         }
-		//Вычисление факториала
+        //Вычисление факториала
         for (int i = 1; i <= number; i++) {
             factorial *= i;
         }
