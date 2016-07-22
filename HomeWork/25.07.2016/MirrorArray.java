@@ -11,23 +11,15 @@ import java.util.Scanner;
  */
 public class MirrorArray {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        int[] array = new int[scanner.nextInt()];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(50);
-        }
-        System.out.println("Изначальный массив: ");
-        for (int i : array) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
+        int[] array = {1,2,3,4,5,6,7,8,9,10};
+
         for (int i = 0; i < array.length / 2; i++) {
             int temp = array[i];
             array[i] = array[array.length - i - 1];
             array[array.length - i - 1] = temp;
         }
-        System.out.println("Зеркальный массив: ");
+
+        System.out.println("Зеркальный массив:");
         for (int i : array) {
             System.out.print(i + " ");
         }
