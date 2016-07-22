@@ -11,24 +11,15 @@ import java.util.Scanner;
 public class House {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // Беру с учетом того что квартира, этаж и номер подьезда начинаются с 1
         System.out.println("Write room number (integer greater than zero): ");
         int roomNumber = scanner.nextInt();
-        int counter = 0;
-        for (int i = 1; i <= 4; i++) {
-            if (roomNumber > 4 * 9 * 4 || roomNumber <= 0) {
-                System.out.println("In this house there is no apartments under this number");
-                break;
-            }
-            for (int j = 1; j <= 9; j++) {
-                for (int k = 0; k < 4; k++) {
-                    counter++;
-                    if (counter == roomNumber) {
-                        System.out.println("Your room in " + i + " Entrance on " + j + " floor");
-                    }
-                }
-            }
-        }
+
+        if (roomNumber <= 144 && roomNumber > 0) {
+            int entrance = (roomNumber % 36 == 0) ? roomNumber / 36 : roomNumber / 36 + 1;
+            int temp = roomNumber - 36 * (entrance - 1);
+            int floor = (temp % 4 == 0) ? temp / 4 : temp / 4 + 1;
+            System.out.println("Your room in " + entrance + " Entrance on " + floor + " Floor");
+        } else System.out.println("In this house there is no apartments under this number");
         scanner.close();
     }
 }
