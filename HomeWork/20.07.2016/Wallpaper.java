@@ -13,7 +13,6 @@ public class Wallpaper {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int lineNumber = scanner.nextInt();
-       //Костыль убрал
         for (int i = 0; i < 5; i++) {
             for (int j = 1; j <= lineNumber; j++) {
                 if (j % 2 != 0) {
