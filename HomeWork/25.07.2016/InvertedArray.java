@@ -19,7 +19,7 @@ public class InvertedArray {
                 {1, 2, 3, 4, 5, 6},
                 {1, 2, 3, 4, 5, 6},
                 {1, 2, 3, 4, 5, 6}};
-        //Перетасовка:
+        //Переворот:
         for (int i = 0; i < array.length; i++) {
             for (int j = i; j < array[i].length; j++) {
                 int temp = array[i][j];
