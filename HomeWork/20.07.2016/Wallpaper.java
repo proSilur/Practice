@@ -12,21 +12,13 @@ import java.util.Scanner;
 public class Wallpaper {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Write line number: ");
         int lineNumber = scanner.nextInt();
-        String temp = "";
 
         for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < lineNumber; ) {
-                temp = "***";
-                System.out.print(temp);
-                j++;
-                if (lineNumber % 2 != 0 && j == lineNumber) {  // Костыль :)
-                    break;
-                }
-                temp = "+++";
-                j++;
-                System.out.print(temp);
+            for (int j = 1; j <= lineNumber; j++) {
+                if (j % 2 != 0) {
+                    System.out.print("***");
+                } else System.out.print("+++");
             }
             System.out.println();
         }
