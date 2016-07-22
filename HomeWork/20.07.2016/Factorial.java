@@ -10,22 +10,16 @@ public class Factorial {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Write number n (4<n<16): ");
         int number = scanner.nextInt();
-        int factorial = 1;
-        //Будет просить n пока не будет введено (4<n<16)
-        while (true) {
-            if (number > 4 && number < 16) {
-                break;
-            } else {
-                System.out.println("Wrong Number!");
-                System.out.println("Write number n (4<n<16): ");
-                number = scanner.nextInt();
+
+        if (number < 4 || number > 16) {
+            System.out.println("Wrong Number!");
+        } else {
+            int factorial = 1;
+            for (int i = 1; i <= number; i++) {
+                factorial *= i;
             }
+            System.out.println("Factorial of number " + number + " = " + factorial);
         }
-        //Вычисление факториала
-        for (int i = 1; i <= number; i++) {
-            factorial *= i;
-        }
-        System.out.println("Factorial of number " + number + " = " + factorial);
         scanner.close();
     }
 }
