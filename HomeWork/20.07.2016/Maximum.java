@@ -33,7 +33,7 @@ public class Maximum {
         } else if (b >= a && b >= c && b >= d) {
             System.out.println(b);
         } else if (c >= a && c >= b && c >= d) {
-            System.out.println(b);
+            System.out.println(c);
         } else System.out.println(d);
          */
 
