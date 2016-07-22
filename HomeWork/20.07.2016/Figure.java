@@ -20,10 +20,7 @@ public class Figure {
         int length = scanner.nextInt();
         int counter = 0;
         int counter2 = 0;
-
         //Вывод в консоль одним циклом
-        //Чуть более чем полностью вывихнул моск, но вроди работает
-
         for (int i = 0; i < length * length; ) {
             counter2++;
             System.out.print("*");
@@ -48,5 +45,4 @@ public class Figure {
         }
         scanner.close();
     }
-
 }
