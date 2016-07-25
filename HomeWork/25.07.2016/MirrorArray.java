@@ -1,10 +1,4 @@
-package third;
-
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-
-/**
+/*
  * 2)Написать код для зеркального переворота массива (7,2,9,4) -> (4,9,2,7). -
  * массив может быть произвольной длинны. (При выполнении задания
  * использовать дополнительный массив нельзя)(1 час)
@@ -18,12 +12,10 @@ public class MirrorArray {
             array[i] = array[array.length - i - 1];
             array[array.length - i - 1] = temp;
         }
-
+        
         System.out.println("Зеркальный массив:");
         for (int i : array) {
             System.out.print(i + " ");
         }
     }
-
-
 }
