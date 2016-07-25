@@ -9,7 +9,10 @@
 
 public class ArrayDoubling {
     public static void main(String[] args) {
-        int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+        int array[] = new int[15];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 100);
+        }
         int array2[] = new int[array.length * 2];
         //Заполняем первую половину массива
         System.arraycopy(array, 0, array2, 0, array.length);
@@ -17,6 +20,7 @@ public class ArrayDoubling {
         for (int i = 0; i < array.length; i++) {
             array2[i + array.length] = array[i] * 2;
         }
+
         //Выводим наш массив
         for (int i : array2) {
             System.out.print(i + " ");
