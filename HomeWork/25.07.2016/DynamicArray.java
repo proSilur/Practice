@@ -1,7 +1,4 @@
-package third;
-
 import java.util.Scanner;
-
 /*
    Написать код для возможности создания массива целых чисел (размер
    вводиться с клавиатуры) и возможности заполнения каждого его элемента
@@ -20,6 +17,5 @@ public class DynamicArray {
         for (int i : array) {
             System.out.print(i + " ");
         }
-
     }
 }
