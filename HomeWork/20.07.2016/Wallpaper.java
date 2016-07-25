@@ -15,9 +15,7 @@ public class Wallpaper {
         int lineNumber = scanner.nextInt();
         for (int i = 0; i < 5; i++) {
             for (int j = 1; j <= lineNumber; j++) {
-                if (j % 2 != 0) {
-                    System.out.print("***");
-                } else System.out.print("+++");
+                System.out.print((j % 2 != 0) ? "***" : "+++");
             }
             System.out.println();
         }
