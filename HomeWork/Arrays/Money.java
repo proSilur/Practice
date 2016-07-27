@@ -11,21 +11,47 @@
 import java.util.Scanner;
 
 public class Money {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] ten = {"one, two, three, four, five, six, seven, eight, nine"};
         String[] twenty = {"eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen"};
         String[] hundred = {"ten, twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety"};
         String[] million = {"hundred, thousand, million"};
-        String[] money = {"dollar", "dollars", "cent", "cents"};
-        String number = scanner.nextLine();
+        String[] dollar = {"dollar", "dollars", "cent", "cents"};
 
-        for (int i = 0; i < number.length(); i++) {
-            if(number.contains(".") || number.contains(",")){
 
+        String[] number = scanner.nextLine().split("[,.]");
+        String cents = (number.length > 1) ? number[1] : "";
+        String[] count = {"", "", ""};
+        int temp = 0;
+
+
+        for (int i = number[0].length(); i > 0; i--) {
+            temp++;
+            char count1 = number[0].toCharArray()[i - 1];
+            if (temp > 0 && temp <= 3) {
+                count[2] = count1 + count[2];
+            } else if (temp > 3 && temp <= 6) {
+                count[1] = count1 + count[1];
+            } else if (temp > 6 && temp <= 9) {
+                count[0] = count1 + count[0];
             }
         }
 
+        String output = "";
+        for (int i = 0; i < count.length; i++) {
+            if (count[i].equals("")) continue;
+            for (int j = 0; j < count[i].length(); j++) {
+                if(count[i].length() == 3){
+                    output += ten[Integer.parseInt(String.valueOf(count[i].toCharArray()[j]))] + "hundred";
+                    if(Integer.parseInt(String.valueOf(count[i].toCharArray()[j + 1])) > 1){
 
+                    }
+
+                }
+            }
+
+        }
     }
+
 }
