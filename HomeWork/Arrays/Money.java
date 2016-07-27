@@ -72,6 +72,6 @@ public class Money {
             output += ten[(Integer.parseInt(cents))];
         }
         output += (!cents.equals("")) ? " Cents" : "";
-        System.out.println(output);
+        System.out.println("You have: " + output);
     }
 }
