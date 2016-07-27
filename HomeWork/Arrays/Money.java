@@ -11,20 +11,16 @@
 import java.util.Scanner;
 
 public class Money {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[] ten = {"one, two, three, four, five, six, seven, eight, nine"};
-        String[] twenty = {"eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen"};
-        String[] hundred = {"ten, twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety"};
-        String[] million = {"hundred, thousand, million"};
-        String[] dollar = {"dollar", "dollars", "cent", "cents"};
-
-
+        String[] ten = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+                "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+        String[] hundred = {"", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+        String[] million = {" million", " thousand", " hundred"};
         String[] number = scanner.nextLine().split("[,.]");
         String cents = (number.length > 1) ? number[1] : "";
         String[] count = {"", "", ""};
         int temp = 0;
-
 
         for (int i = number[0].length(); i > 0; i--) {
             temp++;
@@ -41,17 +37,41 @@ public class Money {
         String output = "";
         for (int i = 0; i < count.length; i++) {
             if (count[i].equals("")) continue;
-            for (int j = 0; j < count[i].length(); j++) {
-                if(count[i].length() == 3){
-                    output += ten[Integer.parseInt(String.valueOf(count[i].toCharArray()[j]))] + "hundred";
-                    if(Integer.parseInt(String.valueOf(count[i].toCharArray()[j + 1])) > 1){
-
-                    }
-
+            if (count[i].length() == 3) {
+                output += ten[Integer.parseInt(count[i]) / 100] + " hundred ";
+                if ((Integer.parseInt(count[i]) % 100) < 20) {
+                    output += ten[Integer.parseInt(count[i]) % 100];
+                } else {
+                    output += hundred[(Integer.parseInt(count[i]) % 100) / 10 - 1];
+                    if (Integer.parseInt(count[i]) % 10 > 0) output += " ";
+                    output += ten[Integer.parseInt(count[i]) % 10];
                 }
+            } else if (count[i].length() == 2) {
+                if (Integer.parseInt(count[i]) < 20) {
+                    output += ten[Integer.parseInt(count[i]) % 100];
+                } else {
+                    output += hundred[(Integer.parseInt(count[i]) % 100) / 10 - 1];
+                    if (Integer.parseInt(count[i]) % 10 > 0) output += " ";
+                    output += ten[Integer.parseInt(count[i]) % 10];
+                }
+            } else if (count[i].length() == 1) {
+                output += ten[(Integer.parseInt(count[i]))];
             }
-
+            output += (i == 2) ? " " : million[i] + " ";
         }
+        output += "Dollars ";
+        if (cents.length() == 2) {
+            if (Integer.parseInt(cents) < 20) {
+                output += ten[Integer.parseInt(cents) % 100];
+            } else {
+                output += hundred[(Integer.parseInt(cents) % 100) / 10 - 1];
+                if (Integer.parseInt(cents) % 10 > 0) output += " ";
+                output += ten[Integer.parseInt(cents) % 10];
+            }
+        } else if (cents.length() == 1) {
+            output += ten[(Integer.parseInt(cents))];
+        }
+        output += (!cents.equals("")) ? " Cents" : "";
+        System.out.println(output);
     }
-
 }
