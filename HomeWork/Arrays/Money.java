@@ -59,7 +59,7 @@ public class Money {
             }
             output += (i == 2) ? " " : million[i] + " ";
         }
-        output += "Dollars ";
+        output += "Dollar(s) ";
         if (cents.length() == 2) {
             if (Integer.parseInt(cents) < 20) {
                 output += ten[Integer.parseInt(cents) % 100];
@@ -69,9 +69,9 @@ public class Money {
                 output += ten[Integer.parseInt(cents) % 10];
             }
         } else if (cents.length() == 1) {
-            output += ten[(Integer.parseInt(cents))];
+            output += hundred[(Integer.parseInt(cents)) - 1];
         }
-        output += (!cents.equals("")) ? " Cents" : "";
+        output += (!cents.equals("")) ? " Cent(s)" : "";
         System.out.println("You have: " + output);
     }
 }
