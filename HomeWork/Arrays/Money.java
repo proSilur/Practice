@@ -60,6 +60,7 @@ public class Money {
             }
             output += (i == 2) ? " " : million[i] + " ";
         }
+        output = (output.equals(" ")) ? "Zero " : output;
         output += "Dollar(s) ";
         if (cents.length() == 2) {
             if (Integer.parseInt(cents) < 20) {
@@ -69,10 +70,10 @@ public class Money {
                 if (Integer.parseInt(cents) % 10 > 0) output += " ";
                 output += ten[Integer.parseInt(cents) % 10];
             }
-        } else if (cents.length() == 1) {
-            output += (cents.equals("1"))? "ten" : hundred[(Integer.parseInt(cents)) - 1];
+        } else if (cents.length() == 1 && !cents.equals("0")) {
+            output += (cents.equals("1")) ? "ten" : hundred[(Integer.parseInt(cents)) - 1];
         }
-        output += (!cents.equals("")) ? " Cent(s)" : "";
+        output += (!cents.equals("") && !cents.equals("0")) ? " Cent(s)" : "";
         System.out.println("You have: " + output);
     }
 }
