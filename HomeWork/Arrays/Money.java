@@ -1,3 +1,4 @@
+package third;
 /*
  3)Ввести с клавиатуры число (до миллиарда) которое обозначает
  количество долларов и центов пользователя. Вывести это количество
@@ -69,7 +70,7 @@ public class Money {
                 output += ten[Integer.parseInt(cents) % 10];
             }
         } else if (cents.length() == 1) {
-            output += hundred[(Integer.parseInt(cents)) - 1];
+            output += (cents.equals("1"))? "ten" : hundred[(Integer.parseInt(cents)) - 1];
         }
         output += (!cents.equals("")) ? " Cent(s)" : "";
         System.out.println("You have: " + output);
