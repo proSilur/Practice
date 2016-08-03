@@ -22,16 +22,15 @@ public class HammingDistance {
         int first = scanner.nextInt();
         System.out.println("Enter second number: ");
         int second = scanner.nextInt();
-        System.out.println("Hamming Distance is: " + hammingDistance(first, second));
+        System.out.println("Hamming Distance is: " + hammingDistance(first ^ second));
     }
 
-    static int hammingDistance(int first, int second) {
-        int distance = 0;
-        char[] array = Integer.toBinaryString(first ^ second).toCharArray();
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == '1')
-                distance++;
+    private static int hammingDistance(int a) {
+        int count = 0;
+        while (a > 0) {
+            count += a & 1;
+            a = a >>> 1;
         }
-        return distance;
+        return count;
     }
 }
