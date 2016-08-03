@@ -11,14 +11,11 @@ import java.util.Calendar;
 
 public class Month {
     public static void main(String[] args) {
-        monthMs();
-    }
-
-    static void monthMs() {
         Calendar calendar = Calendar.getInstance();
-        Calendar calendar1 = Calendar.getInstance();
-        calendar.set(Calendar.MONTH, calendar1.get(Calendar.MONTH) - 1);
-        System.out.print("Прошло миллисекунд от такого же числа но в прошлом месяце: ");
-        System.out.print(calendar1.getTimeInMillis() - calendar.getTimeInMillis());
+        calendar.add(Calendar.MONTH, -1);
+
+        Date dateToday = new Date();
+        Date dateMonthAgo = calendar.getTime();
+        System.out.println("Прошло " + (dateToday.getTime() - dateMonthAgo.getTime()) + " МС с этого же числа прошлого месяца.");
     }
 }
