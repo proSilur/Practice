@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Perestanovki {
     public static void main(String[] arg) {
-        int[] a = { 0, 1, 2, 3, 4,6,7,8 };
+        int[] a = { 0, 1, 2, 3, 4, 6, 7, 8 };
         boolean flag = true;
         int i = 0;
         int j = 0;
