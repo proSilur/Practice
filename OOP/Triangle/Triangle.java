@@ -1,5 +1,3 @@
-package OppOne;
-
 public class Triangle {
     private double partA;
     private double partB;
