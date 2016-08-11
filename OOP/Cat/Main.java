@@ -1,8 +1,4 @@
-package OppOne.Cat;
 
-/**
- * Created by George on 11.08.2016.
- */
 public class Main {
     public static void main(String[] args) {
         Paint paint = new Paint();
