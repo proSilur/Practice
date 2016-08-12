@@ -6,17 +6,17 @@ import java.util.regex.Pattern;
 public class Network {
 
     private static String[] array = new String[5];
+    
+    //Заполняем при старте 5-ю номерами
+    public Network() {
+        setArray();
+    }
 
     public boolean isNumberExist(String number) {
         for (String anArray : array) {
             if (number.equals(anArray)) return true;
         }
         return false;
-    }
-
-    //Заполняем при старте 5-ю номерами
-    public Network() {
-        setArray();
     }
 
     private static void setArray() {
