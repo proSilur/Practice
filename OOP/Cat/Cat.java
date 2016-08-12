@@ -8,6 +8,21 @@ public class Cat {
 
     public Cat() {
     }
+    
+    //Бездомный Кот без имени
+    public Cat(String paint, int age, int weight) {
+        this.paint = paint;
+        this.age = age;
+        this.weight = weight;
+    }
+
+    //Домашний кот с именем
+    public Cat(String name, String paint, int age, int weight) {
+        this.name = name;
+        this.paint = paint;
+        this.age = age;
+        this.weight = weight;
+    }
 
     public String getName() {
         return name;
@@ -44,31 +59,7 @@ public class Cat {
         this.weight = weight;
     }
 
-    //Бездомный Кот без имени
-    public Cat(String paint, int age, int weight) {
-        this.paint = paint;
-        this.age = age;
-        this.weight = weight;
-    }
-
-    //Домашний кот с именем
-    public Cat(String name, String paint, int age, int weight) {
-        this.name = name;
-        this.paint = paint;
-        this.age = age;
-        this.weight = weight;
-    }
-
-    @Override
-    public String toString() {
-        String cat = (name != null) ? homeCat() : homelessCat();
-        return this.paint + "Cat{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", weight=" + weight +
-                '}' + "\n" + cat;
-    }
-
+   
 
     //Взять кота домой и дать ему имя
     public void takeCatToHome(String name) {
@@ -113,5 +104,15 @@ public class Cat {
                 "          \\   ) \\     ) \\ \\\n" +
                 "           ) /__ \\__  ) (\\ \\___\n" +
                 "          (___)))__))(__))(__)))";
+    }
+    
+    @Override
+    public String toString() {
+        String cat = (name != null) ? homeCat() : homelessCat();
+        return this.paint + "Cat{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", weight=" + weight +
+                '}' + "\n" + cat;
     }
 }
