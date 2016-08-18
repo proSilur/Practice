@@ -47,7 +47,8 @@ public class Desk {
     }
 
     public void printAll() {
-        String temp = (counter == 4) ? "\nAll places has been taken\n" : ("\nThere is " + (4 - counter) + " Empty places available." + " { " + availablePlaces(shapes) + "}\n");
+        String temp = (counter == 4) ? "\nAll places has been taken\n" :
+                ("\nThere is " + (4 - counter) + " Empty places available." + " { " + availablePlaces(shapes) + "}\n");
         double area = 0;
         for (int i = 0; i < shapes.length; i++) {
             if (shapes[i] != null) {
