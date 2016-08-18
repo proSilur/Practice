@@ -37,7 +37,9 @@ public class Desk {
     }
 
     public void del(int position) {
-        if (position >= shapes.length) System.out.println("Wrong position");
+        if (position >= shapes.length) {
+            System.out.println("Wrong position");
+        }
         if (shapes[position] != null) {
             shapes[position] = null;
             counter--;
@@ -48,7 +50,9 @@ public class Desk {
         String temp = (counter == 4) ? "\nAll places has been taken\n" : ("\nThere is " + (4 - counter) + " Empty places available." + " { " + availablePlaces(shapes) + "}\n");
         double area = 0;
         for (int i = 0; i < shapes.length; i++) {
-            if (shapes[i] != null) area += shapes[i].getArea();
+            if (shapes[i] != null) {
+                area += shapes[i].getArea();
+            }
         }
         System.out.println(toString() + "All area = " + area + temp);
     }
@@ -67,7 +71,9 @@ public class Desk {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (Shape shape : shapes) {
-            if (shape == null) continue;
+            if (shape == null) {
+                continue;
+            }
             builder.append(shape).append("\n");
         }
         return String.valueOf(builder);
