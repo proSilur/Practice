@@ -10,9 +10,7 @@ public class Perestanovki {
     public static void main(String[] arg) {
         int[] a = {0, 1, 2, 3, 4, 6, 7, 8};
         boolean flag = true;
-        int i = 0;
-        int j = 0;
-        int var = 0;
+        int i, j, var = 0;
         long t = System.currentTimeMillis();
         while (flag) {
 //            System.out.println(Arrays.toString(a));;
