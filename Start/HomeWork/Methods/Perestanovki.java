@@ -8,32 +8,31 @@ import java.util.Scanner;
  */
 public class Perestanovki {
     public static void main(String[] arg) {
-        int[] a = { 0, 1, 2, 3, 4, 6, 7, 8 };
+        int[] a = {0, 1, 2, 3, 4, 6, 7, 8};
         boolean flag = true;
         int i = 0;
         int j = 0;
         int var = 0;
         long t = System.currentTimeMillis();
-        for (; flag;) {
-            printmass(a);
+        while (flag) {
+//            System.out.println(Arrays.toString(a));;
             var++;
-            i = findminI(a);
-            j = findminJ(a, a[i]);
+            i = findMinI(a);
+            j = findMinJ(a, a[i]);
             if (j != 0) {
                 int temp = a[i];
                 a[i] = a[j];
                 a[j] = temp;
-                inverse(a, i + 1);
+                Arrays.sort(a, i + 1, a.length);
             } else {
                 flag = false;
             }
-
         }
         System.out.println(System.currentTimeMillis() - t + " ms");
-        System.out.println("Perestanovok = " + var);
+        System.out.println("Variations = " + var);
     }
 
-    static int findminI(int[] a) {
+    static int findMinI(int[] a) {
         int i = 0;
         for (int j = a.length - 1; j > 0; j--) {
             if (a[j] > a[j - 1]) {
@@ -44,7 +43,7 @@ public class Perestanovki {
         return i;
     }
 
-    static int findminJ(int[] a, int mini) {
+    static int findMinJ(int[] a, int mini) {
         for (int i = a.length - 1; i > 0; i--) {
             if (a[i] > mini) {
                 return i;
@@ -52,15 +51,3 @@ public class Perestanovki {
         }
         return 0;
     }
-
-    static void inverse(int[] a, int start) {
-        Arrays.sort(a, start, a.length);
-    }
-
-    static void printmass(int[] a) {
-        for (int b : a) {
-            System.out.print(b + "  ");
-        }
-        System.out.println();
-    }
-}
